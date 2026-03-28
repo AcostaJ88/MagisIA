@@ -24,7 +24,7 @@ const countWords = (text) => {
 
 // Función principal para llamar a la API de Gemini
 const callGeminiAPI = async (text, mode, extraParams = {}) => {
-  const apiKey = ""; // La clave se inyecta en el entorno de ejecución
+  const apiKey = import.meta.env.VITE_GEMINI_KEY;
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
   let payload = {
